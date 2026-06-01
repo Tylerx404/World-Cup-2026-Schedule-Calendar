@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "title": "World Cup 2026 Schedule Calendar | Lịch thi đấu World Cup 2026",
+    "description": "Lịch thi đấu World Cup 2026 đầy đủ (vòng bảng & knock-out). Countdown đến khai mạc. Thêm toàn bộ lịch vào iCloud / Google Calendar chỉ với 1 click qua WebCal — cập nhật tự động khi có đội vào vòng sau."
+  },
+  "nav": {
+    "countdown": "Countdown",
+    "schedule": "Lịch thi đấu",
+    "addToCalendar": "Thêm vào lịch",
+    "links": {
+      "schedule": "Lịch thi đấu",
+      "teams": "Đội tuyển",
+      "calendar": "Thêm vào lịch"
+    },
+    "cta": {
+      "add": "Thêm lịch ngay"
+    },
+    "hosts": "Canada • Mexico • USA"
+  },
+  "hero": {
+    "badge": "11.06 — 19.07.2026",
+    "headline": "Không bỏ lỡ bất kỳ trận nào tại World Cup 2026.",
+    "subheadline": "Thêm toàn bộ lịch thi đấu một lần duy nhất. Sau đó lịch sẽ tự động cập nhật khi có kết quả và khi các trận knock-out được xác định — không cần theo dõi thủ công.",
+    "primaryCta": "Thêm lịch ngay",
+    "secondaryCta": "Xem lịch thi đấu",
+    "trust": "Cập nhật tự động đến chung kết",
+    "preview": {
+      "eyebrow": "TRẬN SẮP TỚI",
+      "title": "Các trận đấu tiếp theo",
+      "viewFull": "XEM LỊCH ĐẦY ĐỦ →"
+    },
+    "calendar": {
+      "title": "Lịch thi đấu",
+      "noMatches": "Không có trận đấu nào trong ngày này.",
+      "swipeHint": "Chọn ngày có dấu chấm vàng để xem trận đấu",
+      "june": "Tháng 6",
+      "july": "Tháng 7",
+      "mon": "T2",
+      "tue": "T3",
+      "wed": "T4",
+      "thu": "T5",
+      "fri": "T6",
+      "sat": "T7",
+      "sun": "CN"
+    }
+  },
+  "buttons": {
+    "addToCalendar": "Thêm lịch ngay"
+  },
+  "benefits": {
+    "eyebrow": "WEB CAL SUBSCRIPTION",
+    "title": "Thêm lịch một lần. Theo dõi trọn giải.",
+    "items": [
+      {
+        "title": "Cập nhật tự động đến chung kết",
+        "description": "Sau khi thêm lịch, mọi thay đổi (kết quả, đội vào knock-out) sẽ tự động xuất hiện trong lịch cá nhân của bạn."
+      },
+      {
+        "title": "Không bỏ lỡ bất kỳ trận nào",
+        "description": "Bạn không cần phải theo dõi thủ công hay lo lắng lịch thay đổi. Tất cả trận đấu luôn được cập nhật đầy đủ."
+      },
+      {
+        "title": "Chỉ cần thực hiện một lần duy nhất",
+        "description": "Không cần phải import lại file .ics mỗi khi có trận mới. WebCal giúp bạn luôn có lịch mới nhất."
+      },
+      {
+        "title": "Hoạt động ngay trong ứng dụng lịch bạn đang dùng",
+        "description": "Lịch xuất hiện trực tiếp trong iPhone Calendar, Google Calendar hoặc Outlook. Không cần cài thêm ứng dụng nào."
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Lịch thi đấu đầy đủ",
+    "subtitle": "104 TRẬN • 12 NHÓM",
+    "addAll": "Thêm tất cả vào lịch →",
+    "empty": "Không tìm thấy trận nào.",
+    "opening": {
+      "label": "KHAI MẠC",
+      "match": "Mexico vs South Africa — Estadio Azteca"
+    },
+    "webcal": "WebCal Subscription",
+    "stage": {
+      "all": "Tất cả",
+      "group": "Vòng bảng",
+      "round-of-32": "Vòng 32",
+      "round-of-16": "Vòng 1/8",
+      "quarter-final": "Tứ kết",
+      "semi-final": "Bán kết",
+      "third-place": "Hạng 3",
+      "final": "Chung kết"
+    },
+    "table": {
+      "time": "Thời gian (giờ bạn)",
+      "match": "Trận đấu",
+      "round": "Vòng / Nhóm",
+      "venue": "Địa điểm"
+    },
+    "searchPlaceholder": "Tìm đội, sân, thành phố...",
+    "note": "Giờ hiển thị theo múi giờ của bạn. Dữ liệu cập nhật khi có thay đổi knock-out.",
+    "vs": "vs",
+    "group": "Nhóm",
+    "groupLabel": "Nhóm {group}"
+  },
+  "countdown": {
+    "labels": {
+      "days": "NGÀY",
+      "hours": "GIỜ",
+      "minutes": "PHÚT",
+      "seconds": "GIÂY"
+    },
+    "opened": "World Cup 2026 đã khai mạc.",
+    "openedDescription": "Trận khai mạc Mexico vs South Africa đã diễn ra tại Estadio Azteca."
+  },
+  "addToCalendar": {
+    "toasts": {
+      "openingIos": "Đang mở Lịch iPhone...",
+      "openingAndroid": "Mở Google Calendar...",
+      "copied": "Đã sao chép WebCal link",
+      "copyFailed": "Không thể copy. Hãy dùng link thủ công."
+    },
+    "primary": {
+      "ios": "Thêm vào Lịch iPhone (iCloud)",
+      "android": "Thêm vào Google Calendar",
+      "other": "Thêm lịch vào điện thoại"
+    },
+    "secondary": {
+      "show": "Xem tất cả cách thêm",
+      "hide": "Ẩn tùy chọn"
+    },
+    "fallbackTitle": "Các cách thêm lịch:",
+    "options": {
+      "webcal": "WebCal link (iPhone & nhiều app)",
+      "openNow": "Mở ngay",
+      "google": "Google Calendar (subscribe)",
+      "ics": "Tải file .ics (dùng cho Outlook, Apple, v.v.)",
+      "copyWebcal": "Sao chép WebCal subscription link",
+      "copied": "Đã copy!",
+      "copy": "Sao chép"
+    },
+    "fallbackNote": "WebCal giúp lịch của bạn tự động nhận cập nhật khi chúng tôi thay đổi dữ liệu knock-out."
+  },
+  "addToCalendarPage": {
+    "title": "Thêm lịch World Cup 2026 — Một lần duy nhất",
+    "subtitle": "Cờ quốc gia + tự động cập nhật đội knock-out",
+    "description": "Chỉ cần thêm lịch một lần qua WebCal hoặc Google Calendar. Sau khi vòng bảng kết thúc, các đội vào knock-out sẽ tự động xuất hiện trong lịch của bạn. Không cần import lại file .ics.",
+    "howItWorks": "Cách hoạt động",
+    "step1": "Nhấn nút thêm vào lịch (iPhone, Google, hoặc copy link).",
+    "step2": "Lịch của bạn kết nối 1 lần qua WebCal (hoặc subscribe Google).",
+    "step3": "Sau vòng bảng: nguồn dữ liệu live cập nhật → các trận knock-out hiện tên đội thật + cờ quốc gia.",
+    "step4": "Không bao giờ cần import lại. Cập nhật đến chung kết."
+  },
+  "footer": {
+    "tagline": "World Cup 2026 Schedule Calendar • Dành cho người hâm mộ Việt Nam",
+    "fifa": "FIFA.com",
+    "deploy": "Deploy miễn phí trên Vercel"
+  },
+  "theme": {
+    "auto": "Tự động",
+    "light": "Chế độ sáng",
+    "dark": "Chế độ tối",
+    "label": "Chọn chế độ sáng/tối"
+  },
+  "language": {
+    "select": "Chọn ngôn ngữ",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "schedulePage": {
+    "title": "Lịch thi đấu đầy đủ",
+    "subtitle": "104 trận • Vòng bảng & Knock-out",
+    "teamsTitle": "Chi tiết các đội tuyển",
+    "teamsNote": "Nhấp vào thẻ đội để xem thông tin huấn luyện viên, cầu thủ then chốt và bối cảnh.",
+    "navSubtitle": "Lịch thi đấu đầy đủ",
+    "backHome": "← Trang chủ",
+    "headerBadge": "WORLD CUP 2026 • 104 TRẬN",
+    "matchDetails": "CHI TIẾT TRẬN ĐẤU",
+    "scheduleByRound": "Lịch thi đấu theo vòng",
+    "addAllToCalendar": "Thêm tất cả vào lịch",
+    "teamsCaption": "48 ĐỘI TUYỂN • 12 NHÓM",
+    "teamsCountSuffix": "ĐỘI TUYỂN • 12 NHÓM",
+    "teamsDescription": "Thông tin đội hình, huấn luyện viên, cầu thủ then chốt và bối cảnh tham dự của các đội có trong lịch hiện tại (và một số đội mạnh khác). Nhấp vào thẻ để xem chi tiết đầy đủ.",
+    "webcalTitle": "Thêm lịch một lần — cập nhật đến chung kết.",
+    "webcalDesc": "Sau vòng bảng, các đội vào knock-out sẽ tự động xuất hiện trong lịch của bạn. Không cần import lại file .ics.",
+    "footerData": "Dữ liệu lịch thi đấu World Cup 2026 • Cập nhật từ FIFA / openfootball",
+    "footerBackHome": "← Quay về trang chủ",
+    "backToSchedule": "← Quay về Lịch thi đấu"
+  },
+  "calendar": {
+    "title": "Thêm lịch một lần, cập nhật mãi mãi.",
+    "description": "Sau vòng bảng, các đội vào knock-out sẽ tự động xuất hiện trong lịch của bạn. Chỉ cần subscribe một lần qua WebCal — không cần import lại.",
+    "moreMatches": "trận khác",
+    "timezoneNote": "Giờ theo múi giờ của bạn ({tz})",
+    "today": "HÔM NAY",
+    "selectedDay": "NGÀY ĐÃ CHỌN",
+    "viewFullSchedule": "Xem chi tiết đầy đủ trên trang Lịch thi đấu",
+    "note": "Lịch hiển thị theo múi giờ địa phương của bạn ({tz}). Các ngày đã qua được làm mờ.",
+    "monthDesc": "Xem lịch theo tháng. Nhấp vào ngày có trận để xem chi tiết nhanh.",
+    "viewFullScheduleLink": "Xem lịch đầy đủ + thông tin đội tuyển →",
+    "months": {
+      "june2026": "Tháng 6 2026",
+      "july2026": "Tháng 7 2026"
+    }
+  },
+  "teamsPage": {
+    "navSubtitle": "Thông tin 48 đội tuyển",
+    "headerBadge": "WORLD CUP 2026 • 48 ĐỘI • 12 NHÓM",
+    "title": "Các đội tuyển tham dự",
+    "description": "Thông tin chi tiết về 48 đội tuyển (huấn luyện viên, cầu thủ then chốt, sân nhà, mô tả). Dữ liệu cập nhật theo tình hình thực tế của FIFA. Nhấp vào thẻ đội để xem lịch thi đấu của đội đó.",
+    "backToSchedule": "← Quay về Lịch thi đấu"
+  },
+  "common": {
+    "close": "Đóng ✕",
+    "previous": "Trước",
+    "next": "Sau",
+    "page": "Trang",
+    "today": "Hôm nay",
+    "expected": "Dự kiến"
+  },
+  "teams": {
+    "coach": "HUẤN LUYỆN VIÊN",
+    "keyPlayers": "CẦU THỦ THEN CHỐT",
+    "homeStadiums": "SÂN NHÀ / SÂN THI ĐẤU CHÍNH",
+    "matchesOf": "TRẬN ĐẤU CỦA {team}",
+    "noSchedule": "Chưa có lịch cụ thể cho đội này.",
+    "infoNote": "Thông tin tham khảo. Cập nhật theo tình hình thực tế của FIFA và các liên đoàn.",
+    "close": "Đóng"
+  }
+}

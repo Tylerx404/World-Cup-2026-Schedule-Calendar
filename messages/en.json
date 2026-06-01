@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "title": "World Cup 2026 Schedule Calendar | Complete Match Schedule",
+    "description": "Complete FIFA World Cup 2026 match schedule (groups & knockouts). Countdown to kickoff. Subscribe to the live calendar on iOS / Android via WebCal — auto-updates as teams advance."
+  },
+  "nav": {
+    "countdown": "Countdown",
+    "schedule": "Match Schedule",
+    "addToCalendar": "Add to Calendar",
+    "links": {
+      "schedule": "Match Schedule",
+      "teams": "Teams",
+      "calendar": "Add to Calendar"
+    },
+    "cta": {
+      "add": "Add schedule now"
+    },
+    "hosts": "Canada • Mexico • USA"
+  },
+  "hero": {
+    "badge": "11.06 — 19.07.2026",
+    "headline": "Never miss a single match at the 2026 World Cup.",
+    "subheadline": "Add the full schedule once. It will automatically update with results and when knockout matchups are confirmed — no manual tracking needed.",
+    "primaryCta": "Add schedule now",
+    "secondaryCta": "View match schedule",
+    "trust": "Auto-updates through to the final",
+    "preview": {
+      "eyebrow": "NEXT MATCHES",
+      "title": "Upcoming Matches",
+      "viewFull": "VIEW FULL SCHEDULE →"
+    },
+    "calendar": {
+      "title": "Match Schedule",
+      "noMatches": "No matches scheduled for this day.",
+      "swipeHint": "Select days with gold dots to view matches",
+      "june": "June",
+      "july": "July",
+      "mon": "M",
+      "tue": "T",
+      "wed": "W",
+      "thu": "T",
+      "fri": "F",
+      "sat": "S",
+      "sun": "S"
+    }
+  },
+  "buttons": {
+    "addToCalendar": "Add schedule now"
+  },
+  "benefits": {
+    "eyebrow": "WEB CAL SUBSCRIPTION",
+    "title": "Add once. Follow the entire tournament.",
+    "items": [
+      {
+        "title": "Automatic updates until the final",
+        "description": "Once added, any changes (results, knockout matchups) will automatically appear in your personal calendar."
+      },
+      {
+        "title": "Never miss a single match",
+        "description": "No need to manually track or worry about schedule changes. Every match stays up to date automatically."
+      },
+      {
+        "title": "Set it up only once",
+        "description": "No more re-importing .ics files. WebCal ensures you always have the latest schedule without any extra work."
+      },
+      {
+        "title": "Works inside the calendar app you already use",
+        "description": "Matches appear directly in iPhone Calendar, Google Calendar, or Outlook. No additional apps required."
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Full Match Schedule",
+    "subtitle": "104 MATCHES • 12 GROUPS",
+    "addAll": "Add all to calendar →",
+    "empty": "No matches found.",
+    "opening": {
+      "label": "OPENING MATCH",
+      "match": "Mexico vs South Africa — Estadio Azteca"
+    },
+    "webcal": "WebCal Subscription",
+    "stage": {
+      "all": "All",
+      "group": "Group Stage",
+      "round-of-32": "Round of 32",
+      "round-of-16": "Round of 16",
+      "quarter-final": "Quarter-finals",
+      "semi-final": "Semi-finals",
+      "third-place": "Third place",
+      "final": "Final"
+    },
+    "table": {
+      "time": "Time (your time)",
+      "match": "Match",
+      "round": "Round / Group",
+      "venue": "Venue"
+    },
+    "searchPlaceholder": "Search team, venue, city...",
+    "note": "Times shown in your local timezone. Data updates automatically when knockout matchups change.",
+    "vs": "vs",
+    "group": "Group",
+    "groupLabel": "Group {group}"
+  },
+  "countdown": {
+    "labels": {
+      "days": "DAYS",
+      "hours": "HOURS",
+      "minutes": "MIN",
+      "seconds": "SEC"
+    },
+    "opened": "World Cup 2026 has begun.",
+    "openedDescription": "The opening match Mexico vs South Africa has taken place at Estadio Azteca."
+  },
+  "addToCalendar": {
+    "toasts": {
+      "openingIos": "Opening iPhone Calendar...",
+      "openingAndroid": "Opening Google Calendar...",
+      "copied": "WebCal link copied",
+      "copyFailed": "Unable to copy. Please use the manual link."
+    },
+    "primary": {
+      "ios": "Add to iPhone Calendar (iCloud)",
+      "android": "Add to Google Calendar",
+      "other": "Add to your phone"
+    },
+    "secondary": {
+      "show": "See all options",
+      "hide": "Hide options"
+    },
+    "fallbackTitle": "Ways to add to calendar:",
+    "options": {
+      "webcal": "WebCal link (iPhone & many apps)",
+      "openNow": "Open now",
+      "google": "Google Calendar (subscribe)",
+      "ics": "Download .ics file (for Outlook, Apple, etc.)",
+      "copyWebcal": "Copy WebCal subscription link",
+      "copied": "Copied!",
+      "copy": "Copy"
+    },
+    "fallbackNote": "WebCal ensures your calendar automatically receives updates when we change knockout data."
+  },
+  "addToCalendarPage": {
+    "title": "Add World Cup 2026 Schedule — Subscribe Once",
+    "subtitle": "Country flags + automatic knockout team updates",
+    "description": "Add the schedule once via WebCal or Google Calendar. After the group stage ends, advancing teams will automatically appear in your calendar. No need to re-import .ics files ever again.",
+    "howItWorks": "How it works",
+    "step1": "Click the add button (iPhone, Google, or copy the link).",
+    "step2": "Your calendar connects once via WebCal (or Google subscribe).",
+    "step3": "After groups: live data updates → knockout matches show real team names + flag emojis.",
+    "step4": "Never re-import again. Updates all the way to the final."
+  },
+  "calendar": {
+    "title": "Add once, stay updated forever.",
+    "description": "After the group stage, advancing teams will automatically appear in your calendar. Subscribe once via WebCal — no need to re-import.",
+    "moreMatches": "more",
+    "timezoneNote": "Times shown in your local timezone ({tz})",
+    "today": "TODAY",
+    "selectedDay": "SELECTED DAY",
+    "viewFullSchedule": "View full schedule on Match Schedule page",
+    "note": "Calendar uses your local timezone ({tz}). Past days are dimmed.",
+    "monthDesc": "View matches by month. Click a day with matches for quick details.",
+    "viewFullScheduleLink": "View full schedule + team info →",
+    "months": {
+      "june2026": "June 2026",
+      "july2026": "July 2026"
+    }
+  },
+  "teamsPage": {
+    "navSubtitle": "48 national teams info",
+    "headerBadge": "WORLD CUP 2026 • 48 TEAMS • 12 GROUPS",
+    "title": "Participating national teams",
+    "description": "Detailed information on all 48 teams (coach, key players, home stadiums, background). Data is updated based on real FIFA situation. Click a team card to see their matches.",
+    "backToSchedule": "← Back to Match Schedule"
+  },
+  "footer": {
+    "tagline": "World Cup 2026 Schedule Calendar • For Vietnamese fans",
+    "fifa": "FIFA.com",
+    "deploy": "Free deploy on Vercel"
+  },
+  "theme": {
+    "auto": "Auto",
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "label": "Choose theme"
+  },
+  "language": {
+    "select": "Choose language",
+    "vi": "Tiếng Việt",
+    "en": "English"
+  },
+  "schedulePage": {
+    "title": "Full Match Schedule",
+    "subtitle": "104 matches • Group stage & Knockouts",
+    "teamsTitle": "National teams details",
+    "teamsNote": "Click any team card to view coach, key players and background information.",
+    "navSubtitle": "Full Match Schedule",
+    "backHome": "← Home",
+    "headerBadge": "WORLD CUP 2026 • 104 MATCHES",
+    "matchDetails": "MATCH DETAILS",
+    "scheduleByRound": "Match Schedule by Round",
+    "addAllToCalendar": "Add all to calendar",
+    "teamsCaption": "48 TEAMS • 12 GROUPS",
+    "teamsCountSuffix": "TEAMS • 12 GROUPS",
+    "teamsDescription": "Team squad, coach, key players and background for teams in the current schedule (and other strong teams). Click a card for full details.",
+    "webcalTitle": "Add once — updated to the final.",
+    "webcalDesc": "After the group stage, advancing teams will automatically appear in your calendar. No need to re-import .ics.",
+    "footerData": "World Cup 2026 Match Data • Updated from FIFA / openfootball",
+    "footerBackHome": "← Back to home",
+    "backToSchedule": "← Back to Match Schedule"
+  },
+  "common": {
+    "close": "Close ✕",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "today": "Today",
+    "expected": "Expected"
+  },
+  "teams": {
+    "coach": "COACH",
+    "keyPlayers": "KEY PLAYERS",
+    "homeStadiums": "HOME STADIUMS / MAIN VENUES",
+    "matchesOf": "MATCHES OF {team}",
+    "noSchedule": "No specific schedule yet for this team.",
+    "infoNote": "Reference information. Updated according to actual FIFA and confederation situation.",
+    "close": "Close"
+  }
+}
