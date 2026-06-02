@@ -138,7 +138,7 @@ export function Hero({ matches }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-[620px] md:min-h-[700px] flex items-center bg-[var(--color-canvas)] pt-10 pb-14 md:pt-0 md:pb-0">
+    <section className="relative min-h-[620px] md:min-h-[700px] lg:min-h-[750px] flex items-center bg-[var(--color-canvas)] pt-10 pb-14 md:pt-16 md:pb-20 lg:pt-0 lg:pb-0">
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-canvas)] via-[var(--color-canvas-soft)] to-[var(--color-canvas)]" />
       
       {!shouldReduce && (
@@ -152,29 +152,29 @@ export function Hero({ matches }: HeroProps) {
       <div className="container relative z-10 max-w-[1200px] px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-10 items-center">
           
-          <div className="lg:col-span-7 xl:col-span-6 2xl:col-span-6">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7 xl:col-span-6 2xl:col-span-6 mx-auto lg:mx-0 max-w-md lg:max-w-none w-full">
             <div className="inline-flex items-center gap-2 rounded-full bg-[var(--color-wc-gold-soft)] px-4 py-1 text-sm font-medium text-[var(--color-ink)] mb-6">
               <span>11.06 — 19.07.2026 • Canada • Mexico • USA</span>
             </div>
 
-            <h1 className="display-xl tracking-[-2.8px] max-w-[16ch] mb-6">
+            <h1 className="display-xl tracking-[-2.8px] max-w-md lg:max-w-[16ch] mb-6 mx-auto lg:mx-0">
               {t("headline")}
             </h1>
 
-            <p className="body-lg max-w-[48ch] text-[var(--color-body)] mb-8">
+            <p className="body-lg max-w-sm lg:max-w-[48ch] text-[var(--color-body)] mb-8 mx-auto lg:mx-0">
               {t("subheadline")}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto max-w-md sm:max-w-none">
               <Link 
                 href="/add-to-calendar" 
-                className="button-primary text-base px-8"
+                className="button-primary text-base px-8 w-full sm:w-auto"
               >
                 {t("primaryCta")}
               </Link>
               <Link 
                 href="/schedule" 
-                className="button-secondary text-base px-8"
+                className="button-secondary text-base px-8 w-full sm:w-auto"
               >
                 {t("secondaryCta")}
               </Link>
@@ -185,8 +185,8 @@ export function Hero({ matches }: HeroProps) {
             </p>
           </div>
 
-          <div className="lg:col-span-5 xl:col-span-6 2xl:col-span-6 relative pt-2 lg:pt-8 flex justify-center">
-            <div className="relative mx-auto lg:mx-0 max-w-md w-full">
+          <div className="lg:col-span-5 xl:col-span-6 2xl:col-span-6 relative pt-2 lg:pt-8 flex justify-center lg:justify-end">
+            <div className="relative mx-auto lg:ml-auto lg:mr-0 max-w-md w-full">
               <div className="relative rounded-2xl bg-[var(--color-canvas)] border border-[var(--color-hairline)] shadow-xl p-5 select-none">
                 
                 <div className="flex items-center justify-between mb-4 px-1">
