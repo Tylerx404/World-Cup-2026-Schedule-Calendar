@@ -22,8 +22,7 @@ function getWebcalUrl(): string {
 
 function getGoogleCalendarUrl(): string {
   const webcal = getWebcalUrl();
-  const https = webcal.replace("webcal://", "https://");
-  return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(https)}`;
+  return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcal)}`;
 }
 
 export function AddToCalendar({ inline = false }: { inline?: boolean } = {}) {
