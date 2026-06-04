@@ -77,9 +77,9 @@ export default async function WorldCup2026Landing() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="max-w-[380px]">
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="caption-mono text-[var(--color-wc-gold)]">KHAI MẠC</div>
+                  <div className="caption-mono text-[var(--color-wc-gold)]">{t("schedule.opening.label")}</div>
                 </div>
-                <div className="body-md-strong text-lg">11/06/2026 • 20:00 giờ địa phương (Mexico City)</div>
+                <div className="body-md-strong text-lg">{t("schedule.opening.datetime")}</div>
                 <div className="body-sm text-[var(--color-body)] mt-1">{t("schedule.opening.match")}</div>
               </div>
               <div className="w-full md:w-auto">
