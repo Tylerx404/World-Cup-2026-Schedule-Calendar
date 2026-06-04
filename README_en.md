@@ -1,7 +1,7 @@
 <div align="center">
   <span>
-    <a href="../../README.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/Tiếng%20Việt-VI-green?logo=github&style=flat-square"></a>
-    <a href="README.md"><img alt="English" src="https://img.shields.io/badge/English-EN-blue?logo=github&style=flat-square"></a>
+    <a href="README.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/Tiếng%20Việt-VI-green?logo=github&style=flat-square"></a>
+    <a href="README_en.md"><img alt="English" src="https://img.shields.io/badge/English-EN-blue?logo=github&style=flat-square"></a>
   </span>
 
   <h1 style="margin:0.5rem 0">World Cup 2026 — Schedule & WebCal Feed</h1>
