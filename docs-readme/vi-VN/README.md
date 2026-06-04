@@ -1,20 +1,19 @@
 <div align="center">
-  <!-- Language badges: Vietnamese is default -->
-  <a href="README.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/Tiếng%20Việt-VI-green?logo=github&style=flat-square"></a>
-  <a href="../en/README.md"><img alt="English" src="https://img.shields.io/badge/English-EN-blue?logo=github&style=flat-square"></a>
+  <span>
+    <a href="README.md"><img alt="Tiếng Việt" src="https://img.shields.io/badge/Tiếng%20Việt-VI-green?logo=github&style=flat-square"></a>
+    <a href="../en/README.md"><img alt="English" src="https://img.shields.io/badge/English-EN-blue?logo=github&style=flat-square"></a>
+  </span>
+
+  <h1 style="margin:0.5rem 0">Lịch thi đấu World Cup 2026 — Lịch & WebCal</h1>
+  <p style="margin:0.25rem 0"><strong>Nhẹ nhàng, bảo vệ riêng tư và cung cấp nguồn lịch iCalendar (WebCal) chính thức.</strong></p>
+
+  <p style="margin-top:0.5rem">
+    <img alt="modules" src="https://img.shields.io/badge/modules-4-lightgrey?style=flat-square"> 
+    <img alt="lang" src="https://img.shields.io/badge/languages-TypeScript%20%7C%20JS-blue?style=flat-square"> 
+    <img alt="framework" src="https://img.shields.io/badge/framework-Next.js-yellow?style=flat-square"> 
+    <img alt="license" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square">
+  </p>
 </div>
-
-<p align="center">
-  <h1>Lịch thi đấu World Cup 2026 — Lịch & WebCal</h1>
-  <strong>Nhẹ nhàng, bảo vệ riêng tư và cung cấp nguồn lịch iCalendar (WebCal) chính thức.</strong>
-</p>
-
-<p align="center">
-  <img alt="modules" src="https://img.shields.io/badge/modules-4-lightgrey?style=flat-square"> 
-  <img alt="lang" src="https://img.shields.io/badge/languages-TypeScript%20%7C%20JS-blue?style=flat-square"> 
-  <img alt="framework" src="https://img.shields.io/badge/framework-Next.js-yellow?style=flat-square"> 
-  <img alt="license" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square">
-</p>
 ---
 
 ## Vấn đề cốt lõi — Vì sao dự án này cần thiết
