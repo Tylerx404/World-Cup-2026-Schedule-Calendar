@@ -238,7 +238,7 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
       <AnimatePresence>
         {selectedDate && selectedMatches.length > 0 && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 overscroll-contain"
+            className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/40 p-2 sm:items-center sm:p-4 overscroll-contain"
             onClick={() => setSelectedDate(null)}
             {...(!shouldReduce && {
               variants: backdropVariants as any,
@@ -248,7 +248,7 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
             })}
           >
             <motion.div
-              className="card-marketing-large w-full max-w-[620px] relative"
+              className="card-marketing-large app-modal-surface relative"
               onClick={(e) => e.stopPropagation()}
               style={{
                 boxShadow: "0 1px 1px #00000005, 0 8px 16px -4px #0000000a, 0 24px 32px -8px #0000000f",
@@ -262,36 +262,36 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
             >
               <button
                 onClick={() => setSelectedDate(null)}
-                className="absolute top-4 right-4 text-[var(--color-mute)] hover:text-[var(--color-ink)] text-2xl leading-none"
+                className="app-modal-close inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-hairline)] bg-[var(--color-canvas)] text-[var(--color-mute)] transition-colors hover:text-[var(--color-ink)]"
                 aria-label={t("common.close")}
               >
                 ×
               </button>
 
-              <div className="pr-8">
+              <div className="app-modal-header pr-12">
                 <div className="caption-mono text-[var(--color-mute)]">
                   {selectedDate === todayKey ? t("calendar.today") : t("calendar.selectedDay")}
                 </div>
-                <div className="body-md-strong text-lg">{selectedDate}</div>
+                <div className="body-md-strong break-words pr-2 text-base sm:text-lg">{selectedDate}</div>
               </div>
 
-              <div className="mt-4 space-y-3 max-h-[52vh] overflow-auto overscroll-contain pr-1 text-sm">
+              <div className="app-modal-body space-y-3 text-sm">
                 {selectedMatches.map((match) => {
                   const localTime = formatTimeLocal(match.datetime, userTz);
                   const past = isInPast(match.datetime, userTz);
                   return (
                     <div
                       key={match.id}
-                      className={`flex flex-col sm:flex-row sm:items-center gap-2 pb-3 border-b border-[var(--color-hairline)] last:border-0 last:pb-0 ${past ? "opacity-50" : ""}`}
+                      className={`flex flex-col gap-2 border-b border-[var(--color-hairline)] pb-3 last:border-0 last:pb-0 sm:flex-row sm:items-start ${past ? "opacity-50" : ""}`}
                     >
-                      <div className="w-16 sm:w-20 font-mono text-[var(--color-mute)] flex-shrink-0 text-sm">{localTime}</div>
-                      <div className="flex-1 font-medium">
+                      <div className="font-mono text-sm text-[var(--color-mute)] sm:w-20 sm:flex-shrink-0">{localTime}</div>
+                      <div className="min-w-0 flex-1 font-medium">
                         {getFlag(match.teamA)} {match.teamA} <span className="text-[var(--color-mute)] mx-1">{t("schedule.vs")}</span> {getFlag(match.teamB)} {match.teamB}
                       </div>
-                      <div className="text-[var(--color-body)] text-sm">
+                      <div className="text-sm text-[var(--color-body)] sm:max-w-[180px] sm:text-right">
                         {match.venue}
                         {match.group && (
-                          <span className="ml-2 text-xs px-2 py-0.5 rounded bg-[var(--color-canvas-soft)]">
+                          <span className="ml-0 mt-1 inline-flex text-xs px-2 py-0.5 rounded bg-[var(--color-canvas-soft)] sm:ml-2 sm:mt-0">
                             {t("schedule.groupLabel", { group: match.group })}
                           </span>
                         )}
@@ -301,7 +301,7 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
                 })}
               </div>
 
-              <div className="mt-4 pt-4 border-t border-[var(--color-hairline)]">
+              <div className="app-modal-footer border-t border-[var(--color-hairline)] pt-4">
                 <Link href="/schedule" className="text-sm text-[var(--color-link)] hover:underline">
                   {t("calendar.viewFullSchedule")} →
                 </Link>

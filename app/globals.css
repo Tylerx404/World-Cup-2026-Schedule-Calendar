@@ -353,6 +353,67 @@ html.dark .card-marketing:hover {
     0 8px 8px -8px rgba(0, 0, 0, 0.06);
 }
 
+.app-modal-surface {
+  width: min(680px, calc(100vw - 16px));
+  max-height: calc(100dvh - 16px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+
+.app-modal-header {
+  position: relative;
+  flex-shrink: 0;
+  padding: 20px 20px 0;
+}
+
+.app-modal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 20px 20px;
+}
+
+.app-modal-footer {
+  flex-shrink: 0;
+  padding: 0 20px calc(20px + env(safe-area-inset-bottom, 0px));
+}
+
+.app-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+@media (min-width: 640px) {
+  .app-modal-surface {
+    width: min(680px, calc(100vw - 32px));
+    max-height: min(88dvh, 860px);
+  }
+
+  .app-modal-header {
+    padding: 24px 24px 0;
+  }
+
+  .app-modal-body {
+    padding: 20px 24px 24px;
+  }
+
+  .app-modal-footer {
+    padding: 0 24px 24px;
+  }
+
+  .app-modal-close {
+    top: 20px;
+    right: 20px;
+  }
+}
+
 .data-table th {
   background-color: var(--color-canvas-soft);
   font-family: var(--font-geist-mono);
