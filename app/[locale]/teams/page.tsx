@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import { getAllTeams, type TeamInfo } from "@/data/teams";
+import { getAllTeams, type TeamInfo } from "@/data/teams/index";
 import type { Match } from "@/data/schedule";
 import { getWorldCupMatches } from "@/lib/worldcup";
 import { TeamsBrowser } from "@/components/TeamsBrowser";

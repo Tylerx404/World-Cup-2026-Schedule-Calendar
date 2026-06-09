@@ -220,6 +220,7 @@
   "teams": {
     "coach": "COACH",
     "keyPlayers": "KEY PLAYERS",
+    "squad": "SQUAD",
     "homeStadiums": "HOME STADIUMS / MAIN VENUES",
     "matchesOf": "MATCHES OF {team}",
     "noSchedule": "No specific schedule yet for this team.",

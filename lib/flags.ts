@@ -1,4 +1,4 @@
-import { normalizeTeamName } from "@/data/teams";
+import { normalizeTeamName } from "@/data/teams/index";
 
 export function getFlag(team: string): string {
   const normalized = normalizeTeamName(team);

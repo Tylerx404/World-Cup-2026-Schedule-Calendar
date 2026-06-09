@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import { normalizeTeamName, type TeamInfo } from "@/data/teams";
+import { normalizeTeamName, type TeamInfo, type Player } from "@/data/teams/index";
 import type { Match } from "@/data/schedule";
 import { getFlag } from "@/lib/flags";
 import { staggerContainer, fadeInUp, modalVariants, backdropVariants, useSafeMotion } from "@/lib/motion";
@@ -148,20 +148,57 @@ export function TeamsBrowser({ teams, allMatches }: TeamsBrowserProps) {
                 </div>
               )}
 
-              {selected.keyPlayers && selected.keyPlayers.length > 0 && (
-                <div className="mb-4">
-                  <div className="caption-mono text-[var(--color-mute)] mb-1.5">{t("teams.keyPlayers")}</div>
-                  <div className="flex flex-wrap gap-2">
-                    {selected.keyPlayers.map((p, i) => (
-                      <span key={i} className="px-3 py-1 rounded-full bg-[var(--color-canvas-soft)] text-sm border border-[var(--color-hairline)]">
-                        {p}
-                      </span>
-                    ))}
+{selected.keyPlayers && selected.keyPlayers.length > 0 && (
+  <div className="mb-4">
+    <div className="caption-mono text-[var(--color-mute)] mb-1.5">{t("teams.keyPlayers")}</div>
+    <div className="flex flex-wrap gap-2">
+      {selected.keyPlayers.map((p, i) => (
+        <span key={i} className="px-3 py-1 rounded-full bg-[var(--color-canvas-soft)] text-sm border border-[var(--color-hairline)]">
+          {p}
+        </span>
+      ))}
+    </div>
+  </div>
+)}
+
+{selected.squad && selected.squad.length > 0 && (
+  <div className="mb-4">
+    <div className="caption-mono text-[var(--color-mute)] mb-3">{t("teams.squad")}</div>
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {(["GK", "DF", "MF", "FW"] as const).map((pos) => {
+        const players = selected.squad!.filter((p) => p.pos === pos);
+        if (players.length === 0) return null;
+        return (
+          <div key={pos}>
+            <div className="text-[10px] font-mono text-[var(--color-mute)] mb-1.5 uppercase tracking-wider">
+              {pos}
+            </div>
+            <div className="space-y-1.5">
+              {players.map((p, i) => (
+                <div
+                  key={i}
+                  className="bg-[var(--color-canvas-soft)] rounded-md px-2.5 py-2 border border-[var(--color-hairline)]"
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] tabular-nums text-[var(--color-mute)]">
+                      #{p.number ?? "—"}
+                    </span>
+                    <span className="text-xs font-medium truncate">{p.name}</span>
+                  </div>
+                  <div className="text-[10px] text-[var(--color-body)] truncate mt-0.5">
+                    {p.club}
                   </div>
                 </div>
-              )}
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+)}
 
-              {selected.homeStadiums && selected.homeStadiums.length > 0 && (
+{selected.homeStadiums && selected.homeStadiums.length > 0 && (
                 <div>
                   <div className="caption-mono text-[var(--color-mute)] mb-1.5">{t("teams.homeStadiums")}</div>
                   <ul className="text-sm text-[var(--color-body)] space-y-1">

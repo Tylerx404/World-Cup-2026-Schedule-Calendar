@@ -220,6 +220,7 @@
   "teams": {
     "coach": "HUẤN LUYỆN VIÊN",
     "keyPlayers": "CẦU THỦ THEN CHỐT",
+    "squad": "ĐỘI HÌNH",
     "homeStadiums": "SÂN NHÀ / SÂN THI ĐẤU CHÍNH",
     "matchesOf": "TRẬN ĐẤU CỦA {team}",
     "noSchedule": "Chưa có lịch cụ thể cho đội này.",

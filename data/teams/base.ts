@@ -19,7 +19,7 @@ export interface TeamInfo {
   squad?: Player[];
 }
 
-const teams: Record<string, TeamInfo> = {
+export const teams: Record<string, TeamInfo> = {
 
   Mexico: {
     name: "Mexico",
@@ -29,15 +29,8 @@ const teams: Record<string, TeamInfo> = {
     coach: "Javier Aguirre",
     confederation: "CONCACAF",
     description: "Host nation co-hosting with Canada and USA. Strong home support at Estadio Azteca for the opening match.",
-    keyPlayers: ["Hirving Lozano", "Raúl Jiménez", "Edson Álvarez"],
+    keyPlayers: ["Raúl Jiménez", "Edson Álvarez", "Santiago Giménez"],
     homeStadiums: ["Estadio Azteca", "Estadio Guadalajara"],
-    squad: [
-      { name: "Guillermo Ochoa", pos: "GK", club: "AVS", age: 40, number: 13 },
-      { name: "Edson Álvarez", pos: "MF", club: "West Ham", age: 27, number: 4 },
-      { name: "Hirving Lozano", pos: "FW", club: "PSV", age: 30, number: 22 },
-      { name: "Raúl Jiménez", pos: "FW", club: "Flamengo", age: 34, number: 9 },
-      { name: "César Montes", pos: "DF", club: "Almería", age: 28, number: 3 },
-    ],
   },
   "South Africa": {
     name: "South Africa",
@@ -47,7 +40,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Hugo Broos",
     confederation: "CAF",
     description: "Bafana Bafana return to the World Cup after missing recent editions. Known for speed and counter-attacks.",
-    keyPlayers: ["Percy Tau", "Themba Zwane", "Ronwen Williams"],
+    keyPlayers: ["Ronwen Williams", "Teboho Mokoena", "Themba Zwane"],
   },
   "Korea Republic": {
     name: "Korea Republic",
@@ -80,13 +73,6 @@ const teams: Record<string, TeamInfo> = {
     description: "Co-host with growing talent pool. Reached last 16 in 2022. High expectations on home soil.",
     keyPlayers: ["Alphonso Davies", "Jonathan David", "Tajon Buchanan"],
     homeStadiums: ["BMO Field (Toronto)", "Commonwealth Stadium (Edmonton)"],
-    squad: [
-      { name: "Milan Borjan", pos: "GK", club: "Red Star", age: 38, number: 1 },
-      { name: "Alphonso Davies", pos: "DF", club: "Bayern", age: 24, number: 19 },
-      { name: "Jonathan David", pos: "FW", club: "Lille", age: 25, number: 10 },
-      { name: "Tajon Buchanan", pos: "FW", club: "Inter", age: 26, number: 17 },
-      { name: "Stephen Eustáquio", pos: "MF", club: "Porto", age: 28, number: 7 },
-    ],
   },
   "Bosnia and Herzegovina": {
     name: "Bosnia and Herzegovina",
@@ -96,7 +82,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Sergej Barbarez",
     confederation: "UEFA",
     description: "Talented squad with strong midfield. Aiming to return to the knockout stage for the first time since 2014.",
-    keyPlayers: ["Edin Džeko", "Amir Hadžiahmetović", "Haris Hajradinović"],
+    keyPlayers: ["Edin Džeko", "Ermedin Demirović", "Amir Hadžiahmetović"],
   },
   Qatar: {
     name: "Qatar",
@@ -127,14 +113,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Dorival Júnior",
     confederation: "CONMEBOL",
     description: "Five-time champions. Always among the favorites despite recent transitional phase.",
-    keyPlayers: ["Vinícius Júnior", "Rodrygo", "Lucas Paquetá"],
-    squad: [
-      { name: "Alisson", pos: "GK", club: "Liverpool", age: 33, number: 1 },
-      { name: "Vinícius Júnior", pos: "FW", club: "Real Madrid", age: 25, number: 7 },
-      { name: "Rodrygo", pos: "FW", club: "Real Madrid", age: 25, number: 11 },
-      { name: "Lucas Paquetá", pos: "MF", club: "West Ham", age: 27, number: 8 },
-      { name: "Marquinhos", pos: "DF", club: "PSG", age: 31, number: 4 },
-    ],
+    keyPlayers: ["Neymar Jr", "Vinícius Júnior", "Raphinha"],
   },
   Morocco: {
     name: "Morocco",
@@ -144,14 +123,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Walid Regragui",
     confederation: "CAF",
     description: "Historic 2022 semi-finalists. Excellent organization and African champions with strong identity.",
-    keyPlayers: ["Achraf Hakimi", "Sofyan Amrabat", "Youssef En-Nesyri"],
-    squad: [
-      { name: "Yassine Bounou", pos: "GK", club: "Al-Hilal", age: 34, number: 1 },
-      { name: "Achraf Hakimi", pos: "DF", club: "PSG", age: 26, number: 2 },
-      { name: "Sofyan Amrabat", pos: "MF", club: "Fiorentina", age: 28, number: 4 },
-      { name: "Hakim Ziyech", pos: "MF", club: "Galatasaray", age: 32, number: 7 },
-      { name: "Youssef En-Nesyri", pos: "FW", club: "Fenerbahçe", age: 28, number: 9 },
-    ],
+    keyPlayers: ["Achraf Hakimi", "Sofyan Amrabat", "Brahim Díaz"],
   },
   Haiti: {
     name: "Haiti",
@@ -161,7 +133,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Gabriel Calderon",
     confederation: "CONCACAF",
     description: "First-time participants in decades. Passionate side looking to make an impact on the global stage.",
-    keyPlayers: ["Frantzdy Pierrot", "Carlens Arcus", "Danley Jean-Jacques"],
+    keyPlayers: ["Frantzdy Pierrot", "Carlens Arcus", "Jean-Ricner Bellegarde"],
   },
   Scotland: {
     name: "Scotland",
@@ -171,7 +143,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Steve Clarke",
     confederation: "UEFA",
     description: "Returning to the World Cup after a long absence. Tough, organized side with strong team spirit.",
-    keyPlayers: ["Andrew Robertson", "Kieran Tierney", "Che Adams"],
+    keyPlayers: ["Andy Robertson", "Kieran Tierney", "Che Adams"],
   },
 
   "United States": {
@@ -184,13 +156,6 @@ const teams: Record<string, TeamInfo> = {
     description: "Co-host with young, athletic squad. Deep talent pool and high expectations to reach quarter-finals.",
     keyPlayers: ["Christian Pulisic", "Weston McKennie", "Tyler Adams"],
     homeStadiums: ["SoFi Stadium", "Hard Rock Stadium"],
-    squad: [
-      { name: "Matt Turner", pos: "GK", club: "Nottingham Forest", age: 31, number: 1 },
-      { name: "Christian Pulisic", pos: "FW", club: "AC Milan", age: 27, number: 10 },
-      { name: "Weston McKennie", pos: "MF", club: "Juventus", age: 27, number: 8 },
-      { name: "Tyler Adams", pos: "MF", club: "Bournemouth", age: 26, number: 4 },
-      { name: "Folarin Balogun", pos: "FW", club: "Monaco", age: 24, number: 9 },
-    ],
   },
   Paraguay: {
     name: "Paraguay",
@@ -210,7 +175,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Tony Popovic",
     confederation: "AFC",
     description: "Consistent performers from Asia. Physical, hardworking side with growing technical quality.",
-    keyPlayers: ["Mathew Leckie", "Kye Rowles", "Jackson Irvine"],
+    keyPlayers: ["Mathew Leckie", "Harry Souttar", "Jackson Irvine"],
   },
   Turkey: {
     name: "Turkey",
@@ -231,14 +196,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Julian Nagelsmann",
     confederation: "UEFA",
     description: "Four-time winners rebuilding under young coach. Expect high pressing and efficiency.",
-    keyPlayers: ["Jamal Musiala", "Florian Wirtz", "Antonio Rüdiger"],
-    squad: [
-      { name: "Manuel Neuer", pos: "GK", club: "Bayern", age: 40, number: 1 },
-      { name: "Jamal Musiala", pos: "MF", club: "Bayern", age: 23, number: 10 },
-      { name: "Florian Wirtz", pos: "MF", club: "Leverkusen", age: 23, number: 17 },
-      { name: "Antonio Rüdiger", pos: "DF", club: "Real Madrid", age: 33, number: 2 },
-      { name: "Kai Havertz", pos: "FW", club: "Arsenal", age: 27, number: 7 },
-    ],
+    keyPlayers: ["Jamal Musiala", "Florian Wirtz", "Joshua Kimmich"],
   },
   Curaçao: {
     name: "Curaçao",
@@ -258,7 +216,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Emerse Faé",
     confederation: "CAF",
     description: "2023 AFCON winners. Explosive attacking talent and strong African representation.",
-    keyPlayers: ["Sébastien Haller", "Jonathan Bamba", "Serge Aurier"],
+    keyPlayers: ["Franck Kessié", "Simon Adingra", "Ousmane Diomandé"],
   },
   Ecuador: {
     name: "Ecuador",
@@ -280,13 +238,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "UEFA",
     description: "Consistent performers. Excellent depth in attack and traditional Dutch tactical flexibility.",
     keyPlayers: ["Cody Gakpo", "Memphis Depay", "Virgil van Dijk"],
-    squad: [
-      { name: "Bart Verbruggen", pos: "GK", club: "Brighton", age: 23, number: 1 },
-      { name: "Virgil van Dijk", pos: "DF", club: "Liverpool", age: 34, number: 4 },
-      { name: "Frenkie de Jong", pos: "MF", club: "Barcelona", age: 28, number: 21 },
-      { name: "Cody Gakpo", pos: "FW", club: "Liverpool", age: 26, number: 11 },
-      { name: "Memphis Depay", pos: "FW", club: "Atlético Madrid", age: 31, number: 10 },
-    ],
   },
   Japan: {
     name: "Japan",
@@ -296,14 +247,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Hajime Moriyasu",
     confederation: "AFC",
     description: "Asia's most consistent side. Disciplined, fast transitions and excellent work rate.",
-    keyPlayers: ["Takefusa Kubo", "Kaoru Mitoma", "Wataru Endo"],
-    squad: [
-      { name: "Zion Suzuki", pos: "GK", club: "Stuttgart", age: 23, number: 1 },
-      { name: "Takehiro Tomiyasu", pos: "DF", club: "Arsenal", age: 26, number: 2 },
-      { name: "Wataru Endo", pos: "MF", club: "Liverpool", age: 32, number: 3 },
-      { name: "Kaoru Mitoma", pos: "FW", club: "Brighton", age: 28, number: 11 },
-      { name: "Takefusa Kubo", pos: "FW", club: "Real Sociedad", age: 24, number: 10 },
-    ],
+    keyPlayers: ["Kubo Takefusa", "Doan Ritsu", "Endo Wataru"],
   },
   Sweden: {
     name: "Sweden",
@@ -313,7 +257,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Jon Dahl Tomasson",
     confederation: "UEFA",
     description: "Physical and well-organized Scandinavian side returning to the World Cup.",
-    keyPlayers: ["Alexander Isak", "Dejan Kulusevski", "Viktor Gyökeres"],
+    keyPlayers: ["Alexander Isak", "Viktor Gyökeres", "Lucas Bergvall"],
   },
   Tunisia: {
     name: "Tunisia",
@@ -323,7 +267,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Nabil Maâloul",
     confederation: "CAF",
     description: "Regular World Cup participants from Africa. Known for defensive resilience.",
-    keyPlayers: ["Wahbi Khazri", "Ellyes Skhiri", "Aissa Laidouni"],
+    keyPlayers: ["Hannibal Mejbri", "Ellyes Skhiri", "Montassar Talbi"],
   },
 
   Belgium: {
@@ -335,13 +279,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "UEFA",
     description: "Golden generation transitioning. Still dangerous on the counter with world-class individuals.",
     keyPlayers: ["Kevin De Bruyne", "Romelu Lukaku", "Jeremy Doku"],
-    squad: [
-      { name: "Matz Sels", pos: "GK", club: "Nottingham Forest", age: 33, number: 1 },
-      { name: "Jan Vertonghen", pos: "DF", club: "Anderlecht", age: 38, number: 5 },
-      { name: "Kevin De Bruyne", pos: "MF", club: "Man City", age: 34, number: 7 },
-      { name: "Jeremy Doku", pos: "FW", club: "Man City", age: 23, number: 11 },
-      { name: "Romelu Lukaku", pos: "FW", club: "Napoli", age: 32, number: 9 },
-    ],
   },
   Egypt: {
     name: "Egypt",
@@ -351,7 +288,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Hossam Hassan",
     confederation: "CAF",
     description: "Most successful African nation in WC history. Led by the Pharaohs' talisman.",
-    keyPlayers: ["Mohamed Salah", "Omar Marmoush", "Mohamed Elneny"],
+    keyPlayers: ["Mohamed Salah", "Omar Marmoush", "Trézéguet"],
   },
   Iran: {
     name: "Iran",
@@ -361,7 +298,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Amir Ghalenoei",
     confederation: "AFC",
     description: "Strong Asian side known for defensive organization and set-piece threat.",
-    keyPlayers: ["Sardar Azmoun", "Mehdi Taremi", "Alireza Jahanbakhsh"],
+    keyPlayers: ["Mehdi Taremi", "Alireza Jahanbakhsh", "Saman Ghoddos"],
   },
   "New Zealand": {
     name: "New Zealand",
@@ -383,13 +320,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "UEFA",
     description: "European champions with incredible technical quality and depth across the squad.",
     keyPlayers: ["Lamine Yamal", "Pedri", "Rodri"],
-    squad: [
-      { name: "Unai Simón", pos: "GK", club: "Athletic Bilbao", age: 28, number: 23 },
-      { name: "Rodri", pos: "MF", club: "Man City", age: 29, number: 16 },
-      { name: "Pedri", pos: "MF", club: "Barcelona", age: 22, number: 10 },
-      { name: "Lamine Yamal", pos: "FW", club: "Barcelona", age: 18, number: 19 },
-      { name: "Álvaro Morata", pos: "FW", club: "AC Milan", age: 33, number: 7 },
-    ],
   },
   "Cape Verde": {
     name: "Cape Verde",
@@ -399,7 +329,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Bubista",
     confederation: "CAF",
     description: "Debutants at the World Cup. Small island nation with big dreams and strong team unity.",
-    keyPlayers: ["Ryan Mendes", "Jamiro Monteiro", "Djaniny"],
+    keyPlayers: ["Ryan Mendes", "Jamiro Monteiro", "Garry Rodrigues"],
   },
   "Saudi Arabia": {
     name: "Saudi Arabia",
@@ -409,7 +339,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Roberto Mancini",
     confederation: "AFC",
     description: "Ambitious side with growing investment in football. 2022 shock winners returning.",
-    keyPlayers: ["Salem Al-Dawsari", "Bander Al-Shahrani", "Hassan Al-Tambakti"],
+    keyPlayers: ["Salem Aldawsari", "Saud Abdulhamid", "Hassan Altambakti"],
   },
   Uruguay: {
     name: "Uruguay",
@@ -430,14 +360,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Didier Deschamps",
     confederation: "UEFA",
     description: "Back-to-back finalists. World-class depth across every position.",
-    keyPlayers: ["Kylian Mbappé", "Antoine Griezmann", "Aurélien Tchouaméni"],
-    squad: [
-      { name: "Mike Maignan", pos: "GK", club: "AC Milan", age: 30, number: 1 },
-      { name: "Kylian Mbappé", pos: "FW", club: "Real Madrid", age: 27, number: 10 },
-      { name: "Antoine Griezmann", pos: "FW", club: "Atlético Madrid", age: 34, number: 7 },
-      { name: "Aurélien Tchouaméni", pos: "MF", club: "Real Madrid", age: 25, number: 8 },
-      { name: "William Saliba", pos: "DF", club: "Arsenal", age: 24, number: 4 },
-    ],
+    keyPlayers: ["Kylian Mbappé", "Ousmane Dembélé", "Aurélien Tchouaméni"],
   },
   Senegal: {
     name: "Senegal",
@@ -447,14 +370,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Aliou Cissé",
     confederation: "CAF",
     description: "2022 quarter-finalists and African powerhouses. Athletic and dangerous on the break.",
-    keyPlayers: ["Sadio Mané", "Kalidou Koulibaly", "Idrissa Gueye"],
-    squad: [
-      { name: "Édouard Mendy", pos: "GK", club: "Al-Ahli", age: 33, number: 1 },
-      { name: "Kalidou Koulibaly", pos: "DF", club: "Al-Hilal", age: 34, number: 3 },
-      { name: "Idrissa Gueye", pos: "MF", club: "Everton", age: 35, number: 5 },
-      { name: "Sadio Mané", pos: "FW", club: "Al-Nassr", age: 33, number: 10 },
-      { name: "Ismaïla Sarr", pos: "FW", club: "Crystal Palace", age: 27, number: 7 },
-    ],
+    keyPlayers: ["Sadio Mané", "Kalidou Koulibaly", "Ismaïla Sarr"],
   },
   Iraq: {
     name: "Iraq",
@@ -464,7 +380,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Jesús Casas",
     confederation: "AFC",
     description: "Returning to the World Cup after many years. Passionate side with strong fan support.",
-    keyPlayers: ["Aymen Hussein", "Amir Al-Ammari", "Ali Adnan"],
+    keyPlayers: ["Aymen Hussein", "Zidane Iqbal", "Ali Jasim"],
   },
   Norway: {
     name: "Norway",
@@ -474,7 +390,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Ståle Solbakken",
     confederation: "UEFA",
     description: "Talented young squad led by world-class players. High pressing and direct style.",
-    keyPlayers: ["Erling Haaland", "Martin Ødegaard", "Oscar Bobb"],
+    keyPlayers: ["Erling Haaland", "Martín Odegaard", "Oscar Bobb"],
   },
 
   Argentina: {
@@ -486,13 +402,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "CONMEBOL",
     description: "Defending champions. Led by the greatest of his generation.",
     keyPlayers: ["Lionel Messi", "Emiliano Martínez", "Enzo Fernández"],
-    squad: [
-      { name: "Emiliano Martínez", pos: "GK", club: "Aston Villa", age: 33, number: 23 },
-      { name: "Lionel Messi", pos: "FW", club: "Inter Miami", age: 38, number: 10 },
-      { name: "Enzo Fernández", pos: "MF", club: "Chelsea", age: 24, number: 5 },
-      { name: "Julián Álvarez", pos: "FW", club: "Atlético Madrid", age: 25, number: 9 },
-      { name: "Rodrigo De Paul", pos: "MF", club: "Atlético Madrid", age: 31, number: 7 },
-    ],
   },
   Algeria: {
     name: "Algeria",
@@ -502,7 +411,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Vladimir Petković",
     confederation: "CAF",
     description: "2014 quarter-finalists returning with strong CAF pedigree and technical quality.",
-    keyPlayers: ["Riyad Mahrez", "Islam Slimani", "Sofiane Feghouli"],
+    keyPlayers: ["Riyad Mahrez", "Houssem Aouar", "Amine Gouiri"],
   },
   Austria: {
     name: "Austria",
@@ -522,7 +431,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Jamal Sellami",
     confederation: "AFC",
     description: "Debutants at the World Cup. Historic qualification for Asian football.",
-    keyPlayers: ["Musa Al-Taamari", "Yazan Al-Na'our", "Abdullah Al-Mamari"],
+    keyPlayers: ["Mousa Altamari", "Yazan Alarab", "Ali Olwan"],
   },
 
   Portugal: {
@@ -534,13 +443,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "UEFA",
     description: "European champions with Cristiano Ronaldo leading a talented generation.",
     keyPlayers: ["Cristiano Ronaldo", "Bernardo Silva", "Bruno Fernandes"],
-    squad: [
-      { name: "Diogo Costa", pos: "GK", club: "Porto", age: 26, number: 1 },
-      { name: "Bernardo Silva", pos: "MF", club: "Man City", age: 30, number: 10 },
-      { name: "Bruno Fernandes", pos: "MF", club: "Man Utd", age: 30, number: 8 },
-      { name: "Cristiano Ronaldo", pos: "FW", club: "Al-Nassr", age: 41, number: 7 },
-      { name: "Gonçalo Ramos", pos: "FW", club: "PSG", age: 24, number: 9 },
-    ],
   },
   "DR Congo": {
     name: "DR Congo",
@@ -560,7 +462,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Farrukh Ismoilov",
     confederation: "AFC",
     description: "Debutants making history for Central Asian football. Well-organized and ambitious.",
-    keyPlayers: ["Eldor Shomurodov", "Jaloliddin Masharipov", "Odil Ahmedov"],
+    keyPlayers: ["Eldor Shomurodov", "Jaloliddin Masharipov", "Abbosbek Fayzullaev"],
   },
   Colombia: {
     name: "Colombia",
@@ -581,14 +483,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Thomas Tuchel",
     confederation: "UEFA",
     description: "Consistent semi-finalists with one of the deepest squads in world football.",
-    keyPlayers: ["Jude Bellingham", "Phil Foden", "Harry Kane"],
-    squad: [
-      { name: "Jordan Pickford", pos: "GK", club: "Everton", age: 31, number: 1 },
-      { name: "John Stones", pos: "DF", club: "Man City", age: 31, number: 5 },
-      { name: "Jude Bellingham", pos: "MF", club: "Real Madrid", age: 22, number: 10 },
-      { name: "Phil Foden", pos: "MF", club: "Man City", age: 26, number: 7 },
-      { name: "Harry Kane", pos: "FW", club: "Bayern", age: 32, number: 9 },
-    ],
+    keyPlayers: ["Jude Bellingham", "Harry Kane", "Bukayo Saka"],
   },
   Croatia: {
     name: "Croatia",
@@ -599,13 +494,6 @@ const teams: Record<string, TeamInfo> = {
     confederation: "UEFA",
     description: "Back-to-back World Cup finalists. Experience and tactical intelligence in midfield.",
     keyPlayers: ["Luka Modrić", "Ivan Perišić", "Andrej Kramarić"],
-    squad: [
-      { name: "Dominik Livaković", pos: "GK", club: "Fenerbahçe", age: 30, number: 1 },
-      { name: "Luka Modrić", pos: "MF", club: "Real Madrid", age: 39, number: 10 },
-      { name: "Mateo Kovačić", pos: "MF", club: "Man City", age: 31, number: 8 },
-      { name: "Ivan Perišić", pos: "FW", club: "Hajduk Split", age: 36, number: 4 },
-      { name: "Andrej Kramarić", pos: "FW", club: "Hoffenheim", age: 34, number: 9 },
-    ],
   },
   Ghana: {
     name: "Ghana",
@@ -615,7 +503,7 @@ const teams: Record<string, TeamInfo> = {
     coach: "Otto Addo",
     confederation: "CAF",
     description: "Black Stars returning to the World Cup. Known for pace, power and passionate play.",
-    keyPlayers: ["Mohammed Kudus", "Thomas Partey", "Jordan Ayew"],
+    keyPlayers: ["Thomas Partey", "Jordan Ayew", "Antoine Semenyo"],
   },
   Panama: {
     name: "Panama",
