@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { Match } from "@/data/schedule";
 import { Link } from "@/i18n/navigation";
@@ -37,6 +37,7 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
   const [hoveredDate, setHoveredDate] = useState<string | null>(null);
   const [userTz, setUserTz] = useState<string>("UTC");
   const [activeMonth, setActiveMonth] = useState<"2026-06" | "2026-07">("2026-06");
+  const hasAutoOpened = useRef(false);
 
   useEffect(() => {
     setUserTz(getUserTimezone());
@@ -56,8 +57,9 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
   const todayKey = useMemo(() => getDateKeyInTz(new Date(), userTz), [userTz]);
 
   useEffect(() => {
-    if (userTz !== "UTC" && !selectedDate && matchesByDate.has(todayKey)) {
+    if (userTz !== "UTC" && !selectedDate && matchesByDate.has(todayKey) && !hasAutoOpened.current) {
       setSelectedDate(todayKey);
+      hasAutoOpened.current = true;
     }
   }, [userTz, todayKey, matchesByDate, selectedDate]);
 
