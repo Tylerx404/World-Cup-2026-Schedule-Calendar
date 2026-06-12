@@ -40,6 +40,20 @@ export function isToday(iso: string, timeZone?: string): boolean {
   return matchDate === today;
 }
 
+const MATCH_DURATION_MS = 2 * 60 * 60 * 1000;
+
+export function isFinished(iso: string, timeZone?: string): boolean {
+  const matchEnd = new Date(new Date(iso).getTime() + MATCH_DURATION_MS);
+  return matchEnd < new Date();
+}
+
+export function isLive(iso: string, timeZone?: string): boolean {
+  const now = new Date();
+  const matchStart = new Date(iso);
+  const matchEnd = new Date(matchStart.getTime() + MATCH_DURATION_MS);
+  return now >= matchStart && now < matchEnd;
+}
+
 export function formatTimeLocal(iso: string, timeZone?: string): string {
   const tz = timeZone || getUserTimezone();
   const d = new Date(iso);

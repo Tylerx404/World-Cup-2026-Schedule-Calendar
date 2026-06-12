@@ -25,6 +25,9 @@
   --color-wc-gold: #d4af37;
   --color-wc-gold-soft: #f4e4bc;
 
+  --color-live: #ef4444;
+  --color-live-bg: #fef2f2;
+
   --color-cyan: #50e3c2;
   --color-violet: #7928ca;
   --color-highlight-pink: #ff0080;
@@ -60,6 +63,9 @@ html.dark {
   --color-wc-blue: #3b82f6;
   --color-wc-gold: #facc15;
   --color-wc-gold-soft: #3f2a1f;
+
+  --color-live: #f87171;
+  --color-live-bg: #2a1010;
 }
 
 html {

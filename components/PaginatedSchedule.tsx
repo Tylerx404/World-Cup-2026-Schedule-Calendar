@@ -9,6 +9,8 @@ import {
   getDateKeyInTz,
   isInPast,
   isToday,
+  isFinished,
+  isLive,
   formatTimeLocal,
   getWeekdayShort,
   formatShortDate,
@@ -98,7 +100,8 @@ export function PaginatedSchedule({ matches }: PaginatedScheduleProps) {
         )}
 
         {pageMatches.map((match) => {
-          const past = isInPast(match.datetime, userTz);
+          const finished = isFinished(match.datetime, userTz);
+          const live = isLive(match.datetime, userTz);
           const todayMatch = isToday(match.datetime, userTz);
           const localTime = formatTimeLocal(match.datetime, userTz);
           const weekday = getWeekdayShort(match.datetime, locale, userTz);
@@ -108,8 +111,10 @@ export function PaginatedSchedule({ matches }: PaginatedScheduleProps) {
             <div
               key={match.id}
               className={`flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:p-4 rounded-xl border border-[var(--color-hairline)] bg-[var(--color-canvas)] hover:border-[var(--color-hairline-strong)] hover:shadow-xs transition-all gap-2 sm:gap-4 min-w-0 ${
-                past ? "opacity-55" : ""
-              } ${todayMatch ? "ring-1 ring-[var(--color-link)] border-[var(--color-link)]" : ""}`}
+                finished ? "opacity-40 pointer-events-none" : ""
+              } ${live ? "ring-2 ring-[var(--color-live,#ef4444)] border-[var(--color-live,#ef4444)] shadow-md" : ""} ${
+                todayMatch && !live && !finished ? "ring-1 ring-[var(--color-link)] border-[var(--color-link)]" : ""
+              }`}
             >
               {/* Date & Time Column */}
               <div className="flex sm:flex-col justify-between sm:justify-center items-center sm:items-start w-full sm:w-28 shrink-0 pb-1.5 sm:pb-0 border-b sm:border-b-0 border-[var(--color-hairline)]">
@@ -141,7 +146,12 @@ export function PaginatedSchedule({ matches }: PaginatedScheduleProps) {
                       {t("schedule.groupLabel", { group: match.group })}
                     </span>
                   )}
-                  {todayMatch && (
+                  {live && (
+                    <span className="px-2 py-0.5 rounded-full bg-[var(--color-live-bg,#fef2f2)] border border-[var(--color-live,#ef4444)]/30 text-[9px] sm:text-[10px] font-bold text-[var(--color-live,#ef4444)] animate-pulse">
+                      LIVE
+                    </span>
+                  )}
+                  {todayMatch && !live && (
                     <span className="px-2 py-0.5 rounded-full bg-[var(--color-link-bg-soft)] border border-[var(--color-link)]/20 text-[9px] sm:text-[10px] font-medium text-[var(--color-link)]">
                       {t("common.today")}
                     </span>
