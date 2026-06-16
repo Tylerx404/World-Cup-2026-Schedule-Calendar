@@ -1,7 +1,7 @@
 import type { Match, Stage } from "@/data/schedule";
 import { normalizeTeamName } from "@/data/teams/index";
 
-const WORLDCUP_JSON_URL =
+export const WORLDCUP_JSON_URL =
   "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
 
 interface RawMatch {

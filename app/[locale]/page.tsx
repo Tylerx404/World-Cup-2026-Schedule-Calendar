@@ -1,10 +1,10 @@
 import { Link } from "@/i18n/navigation";
-import { Countdown } from "@/components/Countdown";
 import { MonthCalendar } from "@/components/MonthCalendar";
 import { AddToCalendar } from "@/components/AddToCalendar";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { Hero } from "@/components/Hero";
+import { StandingsClient } from "@/components/StandingsClient";
 
 import { Footer } from "@/components/Footer";
 import { Logo } from "@/components/icons/Logo";
@@ -72,20 +72,18 @@ export default async function WorldCup2026Landing() {
       <main className="flex-1">
         <Hero matches={dynamicMatches} />
 
-        <section className="section bg-[var(--color-canvas)] border-b border-[var(--color-hairline)]">
-          <div className="container max-w-[900px]">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="max-w-[380px]">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="caption-mono text-[var(--color-wc-gold)]">{t("schedule.opening.label")}</div>
-                </div>
-                <div className="body-md-strong text-lg">{t("schedule.opening.datetime")}</div>
-                <div className="body-sm text-[var(--color-body)] mt-1">{t("schedule.opening.match")}</div>
+        <section id="standings" className="section bg-[var(--color-canvas)] border-b border-[var(--color-hairline)]">
+          <div className="container max-w-[1200px]">
+            <div className="max-w-[720px] mb-6">
+              <div className="caption-mono text-[var(--color-wc-gold)] mb-2">
+                {t("standings.headerBadge")}
               </div>
-              <div className="w-full md:w-auto">
-                <Countdown />
-              </div>
+              <h2 className="display-md mb-2">{t("standings.title")}</h2>
+              <p className="body-md text-[var(--color-body)]">
+                {t("standings.description")}
+              </p>
             </div>
+            <StandingsClient />
           </div>
         </section>
 

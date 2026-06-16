@@ -209,6 +209,32 @@
     "description": "Thông tin chi tiết về 48 đội tuyển (huấn luyện viên, cầu thủ then chốt, sân nhà, mô tả). Dữ liệu cập nhật theo tình hình thực tế của FIFA. Nhấp vào thẻ đội để xem lịch thi đấu của đội đó.",
     "backToSchedule": "← Quay về Lịch thi đấu"
   },
+  "standings": {
+    "headerBadge": "WORLD CUP 2026 • BẢNG XẾP HẠNG REALTIME",
+    "title": "Bảng xếp hạng",
+    "description": "Bảng xếp hạng được cập nhật tự động từ dữ liệu kết quả trận đấu. Hai đội đứng đầu mỗi bảng sẽ vào vòng 32.",
+    "lastUpdated": "Cập nhật lúc {time}",
+    "refreshing": "Đang cập nhật...",
+    "refresh": "Làm mới",
+    "errorTitle": "Không thể tải bảng xếp hạng",
+    "retry": "Thử lại",
+    "noData": "Chưa có dữ liệu.",
+    "autoUpdate": "Tự động cập nhật mỗi 60 giây",
+    "table": {
+      "rank": "#",
+      "team": "Đội",
+      "p": "Trận",
+      "w": "T",
+      "d": "H",
+      "l": "B",
+      "gf": "BT",
+      "ga": "BB",
+      "gd": "HS",
+      "pts": "Điểm"
+    },
+    "qualified": "Vào vòng trong",
+    "qualifyNote": "2 đội đầu mỗi bảng vào vòng 32"
+  },
   "common": {
     "close": "Đóng ✕",
     "previous": "Trước",

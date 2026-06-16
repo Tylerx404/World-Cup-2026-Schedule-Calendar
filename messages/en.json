@@ -173,6 +173,32 @@
     "description": "Detailed information on all 48 teams (coach, key players, home stadiums, background). Data is updated based on real FIFA situation. Click a team card to see their matches.",
     "backToSchedule": "← Back to Match Schedule"
   },
+  "standings": {
+    "headerBadge": "WORLD CUP 2026 • LIVE STANDINGS",
+    "title": "Group Standings",
+    "description": "Standings are computed live from match results. The top two teams in each group advance to the round of 32.",
+    "lastUpdated": "Updated at {time}",
+    "refreshing": "Refreshing...",
+    "refresh": "Refresh",
+    "errorTitle": "Could not load standings",
+    "retry": "Retry",
+    "noData": "No data yet.",
+    "autoUpdate": "Auto-updates every 60 seconds",
+    "table": {
+      "rank": "#",
+      "team": "Team",
+      "p": "P",
+      "w": "W",
+      "d": "D",
+      "l": "L",
+      "gf": "GF",
+      "ga": "GA",
+      "gd": "GD",
+      "pts": "Pts"
+    },
+    "qualified": "Advances",
+    "qualifyNote": "Top 2 in each group advance to round of 32"
+  },
   "footer": {
     "tagline": "World Cup 2026 Schedule Calendar • For Vietnamese fans",
     "fifa": "FIFA.com",
