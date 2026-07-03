@@ -13,6 +13,7 @@ export interface TeamStanding {
   goalsAgainst: number;
   goalDifference: number;
   points: number;
+  qualified?: boolean;
 }
 
 export interface GroupStanding {
@@ -48,12 +49,14 @@ function emptyRow(team: string): TeamStanding {
   };
 }
 
-function groupLetterFromMatch(rawGroup: string | undefined, team1: string, team2: string): string | null {
+function groupLetterFromMatch(rawGroup: string | undefined): string | null {
   if (rawGroup) {
     const stripped = rawGroup.replace(/^Group\s+/i, "").trim();
     if (ALL_GROUPS.includes(stripped)) return stripped;
   }
-  return TEAM_TO_GROUP[normalizeTeamName(team1)] ?? null;
+  // Only trust explicit group label from data source.
+  // Knockout/other matches without group must be ignored to avoid polluting standings.
+  return null;
 }
 
 function compareTeams(a: TeamStanding, b: TeamStanding): number {
@@ -81,7 +84,7 @@ export function computeStandings(
   for (const m of rawMatches) {
     if (!m.score?.ft) continue;
 
-    const group = groupLetterFromMatch(m.group, m.team1, m.team2);
+    const group = groupLetterFromMatch(m.group);
     if (!group) continue;
 
     const t1 = normalizeTeamName(m.team1);
@@ -120,8 +123,25 @@ export function computeStandings(
     row.goalDifference = row.goalsFor - row.goalsAgainst;
   }
 
-  return ALL_GROUPS.map((letter) => {
+  const sortedGroups = ALL_GROUPS.map((letter) => {
     const teams = Array.from(byGroup[letter].values()).sort(compareTeams);
     return { group: letter, teams };
   });
+
+  // Determine the 8 best third-placed teams (across all groups) that advance.
+  // Top 2 in each group always advance.
+  const thirdPlaced = sortedGroups
+    .map((g) => g.teams[2])
+    .filter((t): t is TeamStanding => Boolean(t));
+
+  const bestThirds = [...thirdPlaced].sort(compareTeams).slice(0, 8);
+  const bestThirdSet = new Set(bestThirds.map((t) => t.team));
+
+  return sortedGroups.map((g) => ({
+    group: g.group,
+    teams: g.teams.map((team, idx) => ({
+      ...team,
+      qualified: idx < 2 || bestThirdSet.has(team.team),
+    })),
+  }));
 }

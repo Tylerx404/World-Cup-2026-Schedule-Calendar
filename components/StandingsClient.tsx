@@ -26,8 +26,8 @@ function TableHeader({ labels }: { labels: Record<string, string> }) {
   return (
     <thead>
       <tr>
-        <th className="text-center w-8">{labels.rank}</th>
-        <th>{labels.team}</th>
+        <th className="text-right w-7 pl-2 pr-1 sticky left-0 z-20 bg-[var(--color-canvas-soft)]">{labels.rank}</th>
+        <th className="sticky left-7 z-20 bg-[var(--color-canvas-soft)] shadow-[2px_0_0_var(--color-hairline)] min-w-[28px] pl-2 pr-2 text-left">{labels.team}</th>
         <th className="text-center">{labels.p}</th>
         <th className="text-center">{labels.w}</th>
         <th className="text-center">{labels.d}</th>
@@ -35,7 +35,7 @@ function TableHeader({ labels }: { labels: Record<string, string> }) {
         <th className="text-center">{labels.gf}</th>
         <th className="text-center">{labels.ga}</th>
         <th className="text-center">{labels.gd}</th>
-        <th className="text-center font-semibold">{labels.pts}</th>
+        <th className="text-center font-semibold sticky right-0 z-20 bg-[var(--color-canvas-soft)] shadow-[-2px_0_0_var(--color-hairline)]">{labels.pts}</th>
       </tr>
     </thead>
   );
@@ -45,28 +45,33 @@ function GroupCard({
   group,
   teams,
   table,
-  qualified,
 }: {
   group: GroupStanding;
   teams: TeamStanding[];
   table: Record<string, string>;
-  qualified: string;
 }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    if (el) setIsScrolled(el.scrollLeft > 6);
+  };
+
   return (
     <div className="card-marketing flex flex-col gap-3 p-4 sm:p-5">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="caption-mono text-[var(--color-wc-gold)]">{qualified}</span>
-          <h3 className="display-sm tracking-[-0.5px]">
-            Group {group.group}
-          </h3>
-        </div>
+        <h3 className="display-sm tracking-[-0.5px]">Group {group.group}</h3>
         <span className="caption-mono text-[var(--color-mute)]">
           {teams.filter((t) => t.played > 0).length}/3 MD
         </span>
       </div>
 
-      <div className="overflow-x-auto -mx-1 px-1">
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="overflow-x-auto isolate"
+      >
         <table className="data-table w-full">
           <TableHeader labels={table} />
           <tbody>
@@ -78,26 +83,43 @@ function GroupCard({
               </tr>
             ) : (
               teams.map((t, idx) => {
-                const qualified = idx < 2;
+                const isQualified = !!t.qualified;
+                // Differentiate top-2 (stronger) vs qualifying 3rd-placed (subtle) highlight
+                const trClass = !isQualified
+                  ? ""
+                  : idx < 2
+                    ? "bg-[var(--color-wc-gold-soft)]/35"
+                    : "bg-[var(--color-wc-gold-soft)]/15";
+                // Solid background for sticky columns (covers scrolled content cleanly)
+                const stickyBg = isQualified
+                  ? "bg-[var(--color-wc-gold-soft)]"
+                  : "bg-[var(--color-canvas-soft)]";
+                const middleTint = isQualified
+                  ? (idx < 2 ? "bg-[var(--color-wc-gold-soft)]/35" : "bg-[var(--color-wc-gold-soft)]/15")
+                  : "";
                 return (
-                  <tr key={t.team} className={qualified ? "bg-[var(--color-wc-gold-soft)]/30" : ""}>
-                    <td className="text-center tabular-nums text-[var(--color-mute)]">{idx + 1}</td>
-                    <td>
-                      <div className="flex items-center gap-2 min-w-0">
+                  <tr key={t.team} className={trClass}>
+                    <td className={`text-right tabular-nums text-[var(--color-mute)] w-7 pl-2 pr-1 sticky left-0 z-20 ${stickyBg}`}>{idx + 1}</td>
+                    <td className={`sticky left-7 z-20 ${stickyBg} shadow-[2px_0_0_var(--color-hairline)] min-w-[28px] pl-2 pr-2`}>
+                      <div className="flex items-center min-w-0">
                         <span className="text-base leading-none flex-shrink-0">{t.flag}</span>
-                        <span className="truncate font-medium">{t.team}</span>
+                        <span
+                          className={`truncate font-medium transition-all duration-150 ${isScrolled ? "w-0 opacity-0 overflow-hidden" : "opacity-100"}`}
+                        >
+                          {t.team}
+                        </span>
                       </div>
                     </td>
-                    <td className="text-center tabular-nums">{t.played}</td>
-                    <td className="text-center tabular-nums">{t.won}</td>
-                    <td className="text-center tabular-nums">{t.draw}</td>
-                    <td className="text-center tabular-nums">{t.loss}</td>
-                    <td className="text-center tabular-nums">{t.goalsFor}</td>
-                    <td className="text-center tabular-nums">{t.goalsAgainst}</td>
-                    <td className={`text-center tabular-nums ${t.goalDifference > 0 ? "text-[var(--color-success)]" : t.goalDifference < 0 ? "text-[var(--color-error)]" : "text-[var(--color-mute)]"}`}>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.played}</td>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.won}</td>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.draw}</td>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.loss}</td>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.goalsFor}</td>
+                    <td className={`text-center tabular-nums ${middleTint}`}>{t.goalsAgainst}</td>
+                    <td className={`text-center tabular-nums ${middleTint} ${t.goalDifference > 0 ? "text-[var(--color-success)]" : t.goalDifference < 0 ? "text-[var(--color-error)]" : "text-[var(--color-mute)]"}`}>
                       {t.goalDifference > 0 ? `+${t.goalDifference}` : t.goalDifference}
                     </td>
-                    <td className="text-center tabular-nums font-semibold">{t.points}</td>
+                    <td className={`text-center tabular-nums font-semibold sticky right-0 z-20 ${stickyBg} shadow-[-2px_0_0_var(--color-hairline)]`}>{t.points}</td>
                   </tr>
                 );
               })
@@ -217,8 +239,6 @@ export function StandingsClient() {
           <span className="tabular-nums">
             {t("lastUpdated", { time: formatTime(updatedAt, locale) })}
           </span>
-          <span className="hidden sm:inline">•</span>
-          <span className="hidden sm:inline">{t("autoUpdate")}</span>
         </div>
 
         <button
@@ -248,7 +268,6 @@ export function StandingsClient() {
               group={g}
               teams={g.teams}
               table={table}
-              qualified={t("qualified")}
             />
           ))}
         </div>

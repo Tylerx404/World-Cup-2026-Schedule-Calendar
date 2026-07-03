@@ -176,7 +176,7 @@
   "standings": {
     "headerBadge": "WORLD CUP 2026 • LIVE STANDINGS",
     "title": "Group Standings",
-    "description": "Standings are computed live from match results. The top two teams in each group advance to the round of 32.",
+    "description": "Standings are computed live from match results. The top two teams in each group plus the 8 best third-placed teams advance to the round of 32.",
     "lastUpdated": "Updated at {time}",
     "refreshing": "Refreshing...",
     "refresh": "Refresh",
@@ -197,7 +197,7 @@
       "pts": "Pts"
     },
     "qualified": "Advances",
-    "qualifyNote": "Top 2 in each group advance to round of 32"
+    "qualifyNote": "Top 2 per group + 8 best 3rd-placed teams advance to round of 32"
   },
   "footer": {
     "tagline": "World Cup 2026 Schedule Calendar • For Vietnamese fans",
