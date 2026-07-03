@@ -4,7 +4,7 @@ import { normalizeTeamName } from "@/data/teams/index";
 export const WORLDCUP_JSON_URL =
   "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json";
 
-interface RawMatch {
+export interface RawMatch {
   round: string;
   date: string;
   time: string;
@@ -12,6 +12,14 @@ interface RawMatch {
   team2: string;
   group?: string;
   ground?: string;
+  score?: {
+    ft?: [number, number];
+    ht?: [number, number];
+    et?: [number, number];
+    p?: [number, number];
+  };
+  goals1?: Array<{ name: string; minute: string; penalty?: boolean; owngoal?: boolean }>;
+  goals2?: Array<{ name: string; minute: string; penalty?: boolean; owngoal?: boolean }>;
 }
 
 function parseTimeToUTC(dateStr: string, timeStr: string): string {
@@ -37,7 +45,7 @@ function parseTimeToUTC(dateStr: string, timeStr: string): string {
   return utcDate.toISOString();
 }
 
-function mapRoundToStage(round: string): Stage {
+export function mapRoundToStage(round: string): Stage {
   const lower = round.toLowerCase();
 
   if (lower.includes("matchday") || lower.includes("group")) return "group";
@@ -56,6 +64,26 @@ function extractCity(ground?: string): string {
   return ground.replace(/\s*\(.*?\)\s*$/, "").trim();
 }
 
+export function mapRawMatchToMatch(m: RawMatch, index: number): Match {
+  const datetime = parseTimeToUTC(m.date, m.time);
+  const stage = mapRoundToStage(m.round);
+  const group = m.group ? m.group.replace("Group ", "") : undefined;
+
+  return {
+    id: `wc26-${index + 1}`,
+    stage,
+    group,
+    datetime,
+    teamA: normalizeTeamName(m.team1),
+    teamB: normalizeTeamName(m.team2),
+    venue: m.ground || "",
+    city: extractCity(m.ground),
+    score: m.score,
+    goalsA: m.goals1,
+    goalsB: m.goals2,
+  };
+}
+
 export async function getWorldCupMatches(): Promise<Match[]> {
   const res = await fetch(WORLDCUP_JSON_URL, {
     next: { revalidate: 3600 },
@@ -68,20 +96,5 @@ export async function getWorldCupMatches(): Promise<Match[]> {
   const data = await res.json();
   const rawMatches: RawMatch[] = data.matches || [];
 
-  return rawMatches.map((m, index): Match => {
-    const datetime = parseTimeToUTC(m.date, m.time);
-    const stage = mapRoundToStage(m.round);
-    const group = m.group ? m.group.replace("Group ", "") : undefined;
-
-    return {
-      id: `wc26-${index + 1}`,
-      stage,
-      group,
-      datetime,
-      teamA: normalizeTeamName(m.team1),
-      teamB: normalizeTeamName(m.team2),
-      venue: m.ground || "",
-      city: extractCity(m.ground),
-    };
-  });
+  return rawMatches.map((m, index) => mapRawMatchToMatch(m, index));
 }

@@ -74,15 +74,6 @@ export default async function WorldCup2026Landing() {
 
         <section id="standings" className="section bg-[var(--color-canvas)] border-b border-[var(--color-hairline)]">
           <div className="container max-w-[1200px]">
-            <div className="max-w-[720px] mb-6">
-              <div className="caption-mono text-[var(--color-wc-gold)] mb-2">
-                {t("standings.headerBadge")}
-              </div>
-              <h2 className="display-md mb-2">{t("standings.title")}</h2>
-              <p className="body-md text-[var(--color-body)]">
-                {t("standings.description")}
-              </p>
-            </div>
             <StandingsClient />
           </div>
         </section>

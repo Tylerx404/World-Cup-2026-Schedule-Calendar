@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
-import { WORLDCUP_JSON_URL } from "@/lib/worldcup";
-import { computeStandings, type RawMatchForStandings } from "@/lib/standings";
+import { WORLDCUP_JSON_URL, mapRawMatchToMatch, type RawMatch } from "@/lib/worldcup";
+import { computeStandings } from "@/lib/standings";
 
 export const dynamic = "force-dynamic";
-
-interface RawWorldcupResponse {
-  matches?: RawMatchForStandings[];
-}
 
 export async function GET() {
   try {
@@ -21,11 +17,16 @@ export async function GET() {
       );
     }
 
-    const data = (await res.json()) as RawWorldcupResponse;
-    const groups = computeStandings(data.matches || []);
+    const data = (await res.json()) as { matches?: RawMatch[] };
+    const rawMatches = data.matches || [];
+    
+    const groups = computeStandings(rawMatches);
+    const knockoutMatches = rawMatches
+      .map((m, index) => mapRawMatchToMatch(m, index))
+      .filter((m) => m.stage !== "group");
 
     return NextResponse.json(
-      { groups, updatedAt: new Date().toISOString() },
+      { groups, knockoutMatches, updatedAt: new Date().toISOString() },
       {
         headers: {
           "Cache-Control": "public, max-age=30, s-maxage=60",
@@ -35,7 +36,7 @@ export async function GET() {
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(
-      { error: "Standings unavailable", detail: message },
+      { error: "Standings and knockout data unavailable", detail: message },
       { status: 500 }
     );
   }

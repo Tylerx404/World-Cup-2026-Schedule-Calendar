@@ -17,6 +17,14 @@ export interface Match {
   venue: string;
   city: string;
   matchday?: number;
+  score?: {
+    ft?: [number, number];
+    ht?: [number, number];
+    et?: [number, number];
+    p?: [number, number];
+  };
+  goalsA?: Array<{ name: string; minute: string; penalty?: boolean; owngoal?: boolean }>;
+  goalsB?: Array<{ name: string; minute: string; penalty?: boolean; owngoal?: boolean }>;
 }
 
 export const OPENING_MATCH_DATETIME = '2026-06-11T23:00:00Z';

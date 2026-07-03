@@ -197,7 +197,15 @@
       "pts": "Pts"
     },
     "qualified": "Advances",
-    "qualifyNote": "Top 2 per group + 8 best 3rd-placed teams advance to round of 32"
+    "qualifyNote": "Top 2 per group + 8 best 3rd-placed teams advance to round of 32",
+    "viewKnockout": "View Knockout Stage",
+    "viewGroups": "View Group Standings",
+    "knockoutTitle": "Knockout Stage Schedule & Results",
+    "knockoutDescription": "Direct elimination match schedule and results from the round of 32 to the final. Match scores and goals are updated automatically in real time.",
+    "noKnockoutMatches": "No knockout matches have been played yet.",
+    "matchDetails": "Match Details",
+    "goals": "Goals",
+    "penalty": "Penalty"
   },
   "footer": {
     "tagline": "World Cup 2026 Schedule Calendar • For Vietnamese fans",

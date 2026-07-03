@@ -233,7 +233,15 @@
       "pts": "Điểm"
     },
     "qualified": "Vào vòng trong",
-    "qualifyNote": "2 đội đầu mỗi bảng + 8 đội hạng 3 tốt nhất vào vòng 32"
+    "qualifyNote": "2 đội đầu mỗi bảng + 8 đội hạng 3 tốt nhất vào vòng 32",
+    "viewKnockout": "Xem vòng Knock-out",
+    "viewGroups": "Xem vòng bảng",
+    "knockoutTitle": "Lịch thi đấu & Kết quả Knock-out",
+    "knockoutDescription": "Lịch thi đấu loại trực tiếp từ vòng 32 đến trận chung kết. Kết quả trận đấu và danh sách cầu thủ ghi bàn được cập nhật tự động theo thời gian thực.",
+    "noKnockoutMatches": "Chưa có trận đấu vòng knock-out nào diễn ra.",
+    "matchDetails": "Chi tiết trận đấu",
+    "goals": "Bàn thắng",
+    "penalty": "Penalty"
   },
   "common": {
     "close": "Đóng ✕",
