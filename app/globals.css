@@ -396,7 +396,7 @@ html.dark .card-marketing:hover {
   touch-action: manipulation;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .app-modal-surface {
     width: min(680px, calc(100vw - 32px));
     max-height: min(88dvh, 860px);

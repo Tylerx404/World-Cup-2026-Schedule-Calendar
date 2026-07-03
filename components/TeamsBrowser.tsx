@@ -100,7 +100,7 @@ export function TeamsBrowser({ teams, allMatches }: TeamsBrowserProps) {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/40 p-2 sm:items-center sm:p-4"
+            className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/40 p-2 lg:items-center lg:p-4"
             onClick={() => setSelected(null)}
             {...(!shouldReduce && {
               variants: backdropVariants as any,

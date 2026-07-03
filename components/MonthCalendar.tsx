@@ -240,7 +240,7 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
       <AnimatePresence>
         {selectedDate && selectedMatches.length > 0 && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/40 p-2 sm:items-center sm:p-4 overscroll-contain"
+            className="fixed inset-0 z-50 flex items-end justify-center overflow-y-auto bg-black/40 p-2 lg:items-center lg:p-4 overscroll-contain"
             onClick={() => setSelectedDate(null)}
             {...(!shouldReduce && {
               variants: backdropVariants as any,
@@ -281,6 +281,15 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
                 {selectedMatches.map((match) => {
                   const localTime = formatTimeLocal(match.datetime, userTz);
                   const past = isInPast(match.datetime, userTz);
+
+                  const scoreA = match.score?.ft?.[0];
+                  const scoreB = match.score?.ft?.[1];
+                  const hasScore = scoreA !== undefined && scoreB !== undefined;
+
+                  const scorePenA = match.score?.p?.[0];
+                  const scorePenB = match.score?.p?.[1];
+                  const hasPen = scorePenA !== undefined && scorePenB !== undefined;
+
                   return (
                     <div
                       key={match.id}
@@ -288,7 +297,40 @@ export function MonthCalendar({ matches }: MonthCalendarProps) {
                     >
                       <div className="font-mono text-sm text-[var(--color-mute)] sm:w-20 sm:flex-shrink-0">{localTime}</div>
                       <div className="min-w-0 flex-1 font-medium">
-                        {getFlag(match.teamA)} {match.teamA} <span className="text-[var(--color-mute)] mx-1">{t("schedule.vs")}</span> {getFlag(match.teamB)} {match.teamB}
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span>{getFlag(match.teamA)} {match.teamA}</span>
+                          {hasScore ? (
+                            <span className="font-mono font-bold px-1.5 py-0.5 rounded bg-[var(--color-canvas-soft)] border border-[var(--color-hairline)] text-xs text-[var(--color-ink)] select-none">
+                              {scoreA} - {scoreB}
+                              {hasPen && <span className="text-[10px] font-normal text-[var(--color-mute)] ml-1">({scorePenA}-{scorePenB} pen)</span>}
+                            </span>
+                          ) : (
+                            <span className="text-[var(--color-mute)] mx-1">{t("schedule.vs")}</span>
+                          )}
+                          <span>{getFlag(match.teamB)} {match.teamB}</span>
+                        </div>
+
+                        {/* Goals list in modal */}
+                        {hasScore && ((match.goalsA && match.goalsA.length > 0) || (match.goalsB && match.goalsB.length > 0)) && (
+                          <div className="text-[11px] text-[var(--color-mute)] font-normal mt-1.5 space-y-0.5 border-t border-[var(--color-hairline)] pt-1 border-dashed">
+                            {match.goalsA && match.goalsA.length > 0 && (
+                              <div className="flex flex-wrap gap-x-1.5">
+                                <span className="font-semibold text-[10px] uppercase text-[var(--color-body)]">{match.teamA}:</span>
+                                {match.goalsA.map((g, idx) => (
+                                  <span key={idx}>⚽ {g.name} ({g.minute}'){g.penalty && "(P)"}{g.owngoal && "(OG)"}</span>
+                                ))}
+                              </div>
+                            )}
+                            {match.goalsB && match.goalsB.length > 0 && (
+                              <div className="flex flex-wrap gap-x-1.5">
+                                <span className="font-semibold text-[10px] uppercase text-[var(--color-body)]">{match.teamB}:</span>
+                                {match.goalsB.map((g, idx) => (
+                                  <span key={idx}>⚽ {g.name} ({g.minute}'){g.penalty && "(P)"}{g.owngoal && "(OG)"}</span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
                       <div className="text-sm text-[var(--color-body)] sm:max-w-[180px] sm:text-right">
                         {match.venue}
