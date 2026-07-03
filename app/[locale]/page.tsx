@@ -105,7 +105,7 @@ export default async function WorldCup2026Landing() {
                   </Link>
                 </p>
               </div>
-              <Link href="/schedule" className="button-secondary-sm self-start sm:self-auto hover:border-[var(--color-wc-gold)]/60">
+              <Link href="/add-to-calendar" className="button-secondary-sm self-start sm:self-auto hover:border-[var(--color-wc-gold)]/60">
                 {t("schedule.addAll")}
               </Link>
             </div>
